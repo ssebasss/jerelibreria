@@ -18,10 +18,10 @@ public class Libro {
     private Boolean alta;
     
     @ManyToOne //muchos libros hechos por un autor
-    @JoinColumn(name = "autor_id")
+//    @JoinColumn(name = "autor_id")
     private Autor autor;
     @ManyToOne    //muchos libros hechos por una editorial
-    @JoinColumn(name = "editorial_id")
+//    @JoinColumn(name = "editorial_id")
     private Editorial editorial;
     
 

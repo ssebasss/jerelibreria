@@ -4,10 +4,28 @@
  */
 package jerelibreria.persistencia;
 
-/**
- *
- * @author Seba
- */
-public class LibroDAO {
+import java.util.List;
+import jerelibreria.entidades.Libro;
+
+
+public class LibroDAO extends RepositorioDAO<Libro>{
+     public void persistir(Libro libro){
+        super.persirtirEntidad(libro);
+    }
+
+    protected void borrarEstadoEntidad(Libro libro) {
+        super.borrarEstadoEntidad(libro); 
+    }
+
+    protected void editarEstadoEntidad(Libro libro) {
+        super.editarEstadoEntidad(libro); 
+    }
     
+    
+     
+    public List<Libro> buscarNombre(String nombre){
+        String solicitud= "SELECT l FROM Libro l WHERE l.nombre=:nombre";
+        return em.createQuery(solicitud, Libro.class)
+                .setParameter("nombre", nombre).getResultList();
+    }
 }

@@ -4,10 +4,7 @@ package jerelibreria.persistencia;
 import java.util.List;
 import jerelibreria.entidades.Autor;
 
-/**
- *
- * @author Seba
- */
+
 public class AutorDAO extends RepositorioDAO<Autor>{
     
     public void persistir(Autor autor){
@@ -23,7 +20,7 @@ public class AutorDAO extends RepositorioDAO<Autor>{
     }
     
     
-    
+     
 
     public List<Autor> buscarNombre(String nombre){
         String solicitud= "SELECT a FROM Autor a WHERE a.nombre=:nombre";
